@@ -34,6 +34,8 @@ class CrawlSensor(Sensor):
         """Update info about Crawl Sensor asynchronously."""
 
         def process_result(result):
+            if result is None
+                return 0
             if len(result) == 1:
                 for key, value in result[0].items():
                     result[0][key] = check_base64(value)
