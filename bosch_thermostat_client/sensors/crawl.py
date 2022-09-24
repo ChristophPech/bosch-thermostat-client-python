@@ -49,10 +49,6 @@ class CrawlSensor(Sensor):
                 result = await self._connector.get(item[URI])
                 self._data[key][RESULT] = process_result(result.get(VALUE))
                 
-                _LOGGER.error(
-                    f"upd {key} {URI} {self._data[key][RESULT]}"
-                )
-                
             self._state = True
         except DeviceException as err:
             _LOGGER.error(
